@@ -9,14 +9,12 @@ function button_color_changer(button, isClicked) {
     $.ajax({
         type: "POST",
         url: "/button-data",
-        data: {"id": button.id},
-        contentType: "multipart/form-data",
+        data: JSON.stringify({'id': button.id}),
+        contentType: 'application/json;charset=UTF-8',
         success: function (response) {
             console.log(response);
             var color = $(button).css("background-color");
             console.log(color);
-            // $('id').hasClass("active");
-            // if (color != 'rgb(255, 255, 255)') {
             if ($(button).hasClass('active')) {
                 if (isClicked == true) {
                     $(button).css("background-color", "white");
