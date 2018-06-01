@@ -26,8 +26,6 @@ def render_button_html():
 @app.route("/button-data", methods=["POST"])
 def button_data():
     color_id = str(json.loads(request.data).get('id'))
-    # color_id = request.get_data()
-    # color_id = color_id[3:]
     if color_id == 'tomato':
         return 'tomato'
     elif color_id == 'forestgreen':
