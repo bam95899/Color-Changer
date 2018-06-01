@@ -38,7 +38,7 @@ def buttons_data():
 
 @app.route("/buttons/button_world")
 def wonderful_world():
-    return render_template('wonderfulWorld.html')
+    return render_template('wonderful_world.html')
 
 
 # Starts the site
