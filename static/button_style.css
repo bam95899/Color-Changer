@@ -31,15 +31,18 @@ body {
     border: 10px solid lavender;
 }
 
-/*#tomato{*/
-    /*background-color: tomato;*/
+/*#.active{*/
+    /*background-color: white;*/
 /*}*/
 
-/*#aqua {*/
-    /*background-color: aqua;*/
-/*}*/
+#tomato.active{
+    background-color: tomato;
+}
 
-/*#forestgreen {*/
-    /*background-color: forestgreen;*/
-/*}*/
+#aqua.active{
+    background-color: aqua;
+}
 
+#forestgreen.active{
+    background-color: forestgreen;
+}
