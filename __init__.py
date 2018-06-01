@@ -9,16 +9,16 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 
-# Creates and renders in the main page via mainPage.html
+# Creates and renders in the main page via index.html
 @app.route("/")
 def index():
-    return render_template('mainPage.html')
+    return render_template('index.html')
 
 
 # Creates and renders in the page with buttons via buttonsPage.html
 @app.route("/buttons")
 def render_button_html():
-    return render_template('buttonPage.html')
+    return render_template('button_page.html')
 
 
 # returns what color the button should be when clicked.
