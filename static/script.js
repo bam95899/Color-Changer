@@ -15,15 +15,20 @@ function button_color_changer(button, isClicked) {
             console.log(response);
             var color = $(button).css("background-color");
             console.log(color);
-            if (color != 'rgb(255, 255, 255)') {
+            // $('id').hasClass("active");
+            // if (color != 'rgb(255, 255, 255)') {
+            if ($(button).hasClass('active')) {
                 if (isClicked == true) {
                     $(button).css("background-color", "white");
+                    $(button).toggleClass('active')
                 } else {
                     $('body').css('backgroundImage', 'url(https://media.giphy.com/media/1yTi0kB22h0Hdveov8/source.gif)');
                     $(button).css("background-color", "white");
+                    $(button).toggleClass('active')
                 }
             } else {
                 $(button).css("background-color", '' + response);
+                $(button).toggleClass('active')
             }
         },
         error: function (error) {
@@ -40,8 +45,7 @@ is set using JQuery.
  */
 $(document).ready(function () {
     $(".project-buttons").click(function () {
-        var button = this;
-        button_color_changer(button, true);
+        button_color_changer(this, true);
     });
 });
 
@@ -52,7 +56,6 @@ the button should display when hovered over
  */
 $(document).ready(function () {
     $(".project-buttons").hover(function () {
-        var button = this;
-        button_color_changer(button, false);
+        button_color_changer(this, false);
     });
 });
