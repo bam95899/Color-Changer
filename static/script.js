@@ -13,8 +13,8 @@ function button_color_changer(button, isClicked) {
         contentType: 'application/json;charset=UTF-8',
         success: function (response) {
             console.log(response);
-            var color = $(button).css("background-color");
-            console.log(color);
+            // var color = $(button).css("background-color");
+            // console.log(color);
             if ($(button).hasClass('active')) {
                 if (isClicked == true) {
                     $(button).css("background-color", "white");
@@ -26,7 +26,7 @@ function button_color_changer(button, isClicked) {
                 }
             } else {
                 $(button).css("background-color", '' + response);
-                $(button).toggleClass('active')
+                $(button).toggleClass('active');
             }
         },
         error: function (error) {
