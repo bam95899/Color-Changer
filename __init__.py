@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import json
 
 # Color Changer
 # - Use Python with Flask Classy to create endpoints/urls
@@ -22,15 +23,16 @@ def render_button_html():
 
 
 # returns what color the button should be when clicked.
-@app.route("/buttonsData", methods=["POST"])
-def buttons_data():
-    button_id = request.get_data()
-    button_id = button_id[3:]
-    if button_id == 'red':
-        return "tomato"
-    elif button_id == 'green':
+@app.route("/button-data", methods=["POST"])
+def button_data():
+    color_id = str(json.loads(request.data).get('id'))
+    # color_id = request.get_data()
+    # color_id = color_id[3:]
+    if color_id == 'tomato':
+        return 'tomato'
+    elif color_id == 'forestgreen':
         return 'forestgreen'
-    elif button_id == 'blue':
+    elif color_id == 'aqua':
         return 'aqua'
     else:
         return 'white'
