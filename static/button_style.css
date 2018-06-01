@@ -1,4 +1,4 @@
-#background {
+body {
     background-color: #FFFC19;
 }
 
@@ -29,4 +29,20 @@
     align-content: center;
     border-radius: 100%;
     border: 10px solid lavender;
+}
+
+/*#.active{*/
+    /*background-color: white;*/
+/*}*/
+
+#tomato.active{
+    background-color: tomato;
+}
+
+#aqua.active{
+    background-color: aqua;
+}
+
+#forestgreen.active{
+    background-color: forestgreen;
 }

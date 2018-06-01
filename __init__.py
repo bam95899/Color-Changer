@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import json
 
 # Color Changer
 # - Use Python with Flask Classy to create endpoints/urls
@@ -9,28 +10,27 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 
-# Creates and renders in the main page via mainPage.html
+# Creates and renders in the main page via index.html
 @app.route("/")
 def index():
-    return render_template('mainPage.html')
+    return render_template('index.html')
 
 
 # Creates and renders in the page with buttons via buttonsPage.html
 @app.route("/buttons")
 def render_button_html():
-    return render_template('buttonPage.html')
+    return render_template('button_page.html')
 
 
 # returns what color the button should be when clicked.
-@app.route("/buttonsData", methods=["POST"])
-def buttons_data():
-    button_id = request.get_data()
-    button_id = button_id[3:]
-    if button_id == 'red':
-        return "tomato"
-    elif button_id == 'green':
+@app.route("/button-data", methods=["POST"])
+def button_data():
+    color_id = str(json.loads(request.data).get('id'))
+    if color_id == 'tomato':
+        return 'tomato'
+    elif color_id == 'forestgreen':
         return 'forestgreen'
-    elif button_id == 'blue':
+    elif color_id == 'aqua':
         return 'aqua'
     else:
         return 'white'
@@ -38,7 +38,7 @@ def buttons_data():
 
 @app.route("/buttons/button_world")
 def wonderful_world():
-    return render_template('wonderfulWorld.html')
+    return render_template('wonderful_world.html')
 
 
 # Starts the site
