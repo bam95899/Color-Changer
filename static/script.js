@@ -15,18 +15,9 @@ function button_color_changer(button, isClicked) {
             console.log(response);
             // var color = $(button).css("background-color");
             // console.log(color);
-            if ($(button).hasClass('active')) {
-                if (isClicked == true) {
-                    $(button).css("background-color", "white");
-                    $(button).toggleClass('active')
-                } else {
-                    $('body').css('backgroundImage', 'url(https://media.giphy.com/media/1yTi0kB22h0Hdveov8/source.gif)');
-                    $(button).css("background-color", "white");
-                    $(button).toggleClass('active')
-                }
-            } else {
-                $(button).css("background-color", '' + response);
-                $(button).toggleClass('active');
+            $(button).toggleClass('active');
+            if ($(button).hasClass('active') && isClicked == false) {
+                $('body').css('backgroundImage', 'url(https://media.giphy.com/media/1yTi0kB22h0Hdveov8/source.gif)');
             }
         },
         error: function (error) {
